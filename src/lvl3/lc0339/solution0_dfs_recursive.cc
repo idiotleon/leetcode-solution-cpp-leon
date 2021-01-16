@@ -1,19 +1,19 @@
 #include <vector>
-#include "fake-nested-integer.h"
+#include "fake_nested_integer.h"
 
 using std::vector;
 
-class Soln0DFSRecurisve{
+class Solution0DFSRecursive{
     public:
-    int depthSum(vector<FakeNestedInteger>& nestedList) {
+    int depthSum(vector<FakeNestedInteger>& nested_list) {
         int sum = 0;
-        dfs(1, nestedList, sum);
+        dfs(1, nested_list, sum);
         return sum;
     }
     
 private:
-    void dfs(int depth, const vector<FakeNestedInteger>& nestedList, int& sum){        
-        for(auto& ni: nestedList){
+    void dfs(int depth, const vector<FakeNestedInteger>& nested_list, int& sum){        
+        for(auto& ni: nested_list){
             if(ni.isInteger()){
                 sum += ni.getInteger() * depth;
             }else{
