@@ -9,22 +9,30 @@
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool isOneEditDistance(string s, string t) {
+    bool isOneEditDistance(string s, string t)
+    {
         const int lenS = s.length(), lenT = t.length();
-        if(lenS > lenT) return isOneEditDistance(t, s);
-        
-        for(int i = 0; i < lenS; ++i){
-            if(s[i] != t[i]){
-                if(lenS == lenT){
+        if (lenS > lenT)
+            return isOneEditDistance(t, s);
+
+        for (int i = 0; i < lenS; ++i)
+        {
+            if (s[i] != t[i])
+            {
+                if (lenS == lenT)
+                {
                     return s.substr(i + 1) == t.substr(i + 1);
-                }else{
+                }
+                else
+                {
                     return s.substr(i) == t.substr(i + 1);
                 }
             }
         }
-        
+
         return 1 + lenS == lenT;
     }
 };
