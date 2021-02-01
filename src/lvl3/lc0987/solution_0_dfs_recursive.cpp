@@ -18,7 +18,8 @@ public:
     vector<vector<int>> verticalTraversal(TreeNode *root)
     {
         map<int, map<int, multiset<int>>> nodes;
-        traverse(root, 0, 0, nodes);
+
+        dfs(root, 0, 0, nodes);
         vector<vector<int>> ans;
         for (auto p : nodes)
         {
@@ -33,13 +34,13 @@ public:
     }
 
 private:
-    void traverse(TreeNode *root, int x, int y, map<int, map<int, multiset<int>>> &nodes)
+    void dfs(TreeNode *root, int x, int y, map<int, map<int, multiset<int>>> &nodes)
     {
         if (root)
         {
             nodes[x][y].insert(root->val);
-            traverse(root->left, x - 1, y + 1, nodes);
-            traverse(root->right, x + 1, y + 1, nodes);
+            dfs(root->left, x - 1, y + 1, nodes);
+            dfs(root->right, x + 1, y + 1, nodes);
         }
     }
 };
