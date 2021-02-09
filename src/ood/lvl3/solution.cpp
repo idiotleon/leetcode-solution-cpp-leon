@@ -1,5 +1,13 @@
 // https://leetcode.com/problems/peeking-iterator/
+//
+// Time Complexity:     O()
+// Space Complexity:    O()
+//
+// Reference:
+//  https://leetcode.com/problems/peeking-iterator/discuss/72554/Simple-C%2B%2B-solution-(1-line-per-method)-without-extra-member-variables
 #include "Iterator.h"
+
+using namespace std;
 
 class PeekingIterator : public Iterator {
 public:
