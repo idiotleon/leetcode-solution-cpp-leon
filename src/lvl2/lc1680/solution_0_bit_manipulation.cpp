@@ -8,19 +8,19 @@
 class Solution
 {
 public:
-    int concatenatedBinary(int n)
+    int ConcatenatedBinary(int n)
     {
         long ans = 0, len = 0;
         for (int i = 1; i <= n; ++i)
         {
             if ((i & (i - 1)) == 0)
                 ++len;
-            ans = ((ans << len) % mod + i) % mod;
+            ans = ((ans << len) % kMod + i) % kMod;
         }
 
         return ans;
     }
 
 private:
-    const int mod = (int)1e9 + 7;
+    const int kMod = (int)1e9 + 7;
 };

@@ -2,13 +2,15 @@
 
 using namespace std;
 
-class Node {
+class Node
+{
 public:
     int val;
-    Node* next;
-    Node* random;
-    
-    Node(int _val) {
+    Node *next;
+    Node *random;
+
+    Node(int _val)
+    {
         val = _val;
         next = NULL;
         random = NULL;
