@@ -1,8 +1,8 @@
 // @author: Leon
 // https://leetcode.com/problems/permutations-ii/
 //
-// Time Complexity:     O()
-// Space Complexity:    O()
+// Time Complexity:     O(`kSize`!)
+// Space Complexity:    O(`kSize`)
 #include <vector>
 
 using namespace std;
@@ -32,15 +32,15 @@ private:
                    vector<vector<int>> &paths)
     {
 
-        const int nNums = nums.size();
+        const int kSize = nums.size();
 
-        if (path.size() == nNums)
+        if (path.size() == kSize)
         {
             paths.push_back(path);
             return;
         }
 
-        for (int i = 0; i < nNums; ++i)
+        for (int i = 0; i < kSize; ++i)
         {
             if (used[i])
                 continue;

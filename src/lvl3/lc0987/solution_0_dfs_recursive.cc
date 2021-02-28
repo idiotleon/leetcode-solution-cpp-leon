@@ -8,19 +8,19 @@
 #include <map>
 #include <set>
 #include <vector>
-#include "util/data_structure/tree_node.h"
+#include "tree_node.h"
 
 using namespace std;
 
 class Solution
 {
 public:
-    vector<vector<int> > verticalTraversal(TreeNode *root)
+    vector<vector<int>> verticalTraversal(TreeNode *root)
     {
-        map<int, map<int, multiset<int> > > nodes;
+        map<int, map<int, multiset<int>>> nodes;
 
         dfs(root, 0, 0, nodes);
-        vector<vector<int> > ans;
+        vector<vector<int>> ans;
         for (auto p : nodes)
         {
             vector<int> col;
@@ -34,7 +34,7 @@ public:
     }
 
 private:
-    void dfs(TreeNode *root, int x, int y, map<int, map<int, multiset<int> > > &nodes)
+    void dfs(TreeNode *root, int x, int y, map<int, map<int, multiset<int>>> &nodes)
     {
         if (root)
         {

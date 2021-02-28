@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/next-permutation/
 //
-// Time Complexity:     O()
-// Space Complexity:    O()
+// Time Complexity:     O(`kSize`)
+// Space Complexity:    O(1)
 //
 // References:
 //  https://leetcode.com/problems/next-permutation/discuss/13867/C%2B%2B-from-Wikipedia
@@ -14,9 +14,9 @@ class Solution
 public:
     void nextPermutation(vector<int> &nums)
     {
-        const int nNums = nums.size();
+        const int kSize = nums.size();
         int k = 0, l = 0;
-        for (k = nNums - 2; k >= 0; --k)
+        for (k = kSize - 2; k >= 0; --k)
         {
             if (nums[k] < nums[k + 1])
             {
@@ -30,7 +30,7 @@ public:
         }
         else
         {
-            for (l = nNums - 1; l > k; --l)
+            for (l = kSize - 1; l > k; --l)
             {
                 if (nums[l] > nums[k])
                 {

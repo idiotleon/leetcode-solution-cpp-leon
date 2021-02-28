@@ -11,26 +11,32 @@
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<vector<int> > diagonalSort(vector<vector<int> >& matrix) {
-        const int nRows = matrix.size(), nCols = matrix[0].size();
-        
-        unordered_map<int, priority_queue<int, vector<int>, greater<int> > > map;
-        
-        for(int row = 0; row < nRows; ++row){
-            for(int col = 0; col < nCols; ++col){
+    vector<vector<int>> diagonalSort(vector<vector<int>> &matrix)
+    {
+        const int kRows = matrix.size(), kCols = matrix[0].size();
+
+        unordered_map<int, priority_queue<int, vector<int>, greater<int>>> map;
+
+        for (int row = 0; row < kRows; ++row)
+        {
+            for (int col = 0; col < kCols; ++col)
+            {
                 map[row - col].push(matrix[row][col]);
             }
         }
-        
-        for(int row = 0; row < nRows; ++row){
-            for(int col = 0; col < nCols; ++col){
+
+        for (int row = 0; row < kRows; ++row)
+        {
+            for (int col = 0; col < kCols; ++col)
+            {
                 matrix[row][col] = map[row - col].top();
                 map[row - col].pop();
             }
         }
-        
+
         return matrix;
     }
 };

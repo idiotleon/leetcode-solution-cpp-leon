@@ -1,3 +1,7 @@
+// https://leetcode.com/problems/nested-list-weight-sum/
+//
+// Time Complexity:     O()
+// Space Complexity:    O()
 #include <vector>
 #include "fake_nested_integer.h"
 

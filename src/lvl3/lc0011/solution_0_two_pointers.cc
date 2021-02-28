@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/container-with-most-water/
 //
-// Time Complexity:     O()
-// Space Complexity:    O()
+// Time Complexity:     O(`kSize`)
+// Space Complexity:    O(1)
 //
 // Reference:
 //  https://leetcode.com/problems/container-with-most-water/discuss/6090/Simple-and-fast-C%2B%2BC-with-explanation
@@ -14,10 +14,10 @@ class Solution
 public:
     int maxArea(vector<int> &heights)
     {
-        const int nHeights = heights.size();
+        const int kSize = heights.size();
 
         int water = 0;
-        int lo = 0, hi = nHeights - 1;
+        int lo = 0, hi = kSize - 1;
 
         while (lo < hi)
         {
