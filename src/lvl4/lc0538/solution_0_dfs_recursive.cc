@@ -5,7 +5,7 @@
 //
 // Reference:
 //  https://leetcode.com/problems/convert-bst-to-greater-tree/discuss/100610/c%2B%2B-solution-beats-100
-#include "tree_node.h"
+#include "../../util/data_structure/tree_node.h"
 
 using namespace std;
 

@@ -1,9 +1,11 @@
+// https://leetcode.com/problems/peeking-iterator/
 #include <vector>
 
 using namespace std;
 
 class Iterator
 {
+public:
 	struct Data;
 	Data *data;
 	Iterator(const vector<int> &nums){};
