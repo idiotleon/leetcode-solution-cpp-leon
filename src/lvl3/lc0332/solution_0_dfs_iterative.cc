@@ -16,7 +16,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<string> findItinerary(vector<vector<string>> &tickets)
+    vector<string> FindItinerary(vector<vector<string>> &tickets)
     {
         unordered_map<string, multiset<string>> graph;
         vector<string> ans;

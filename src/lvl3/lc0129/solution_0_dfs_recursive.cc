@@ -10,13 +10,13 @@ using namespace std;
 class Solution
 {
 public:
-    int sumNumbers(TreeNode *root)
+    int SumNumbers(TreeNode *root)
     {
-        return dfs(root, 0);
+        return DFS(root, 0);
     }
 
 private:
-    int dfs(TreeNode *node, int num)
+    int DFS(TreeNode *node, int num)
     {
         if (!node)
             return 0;
@@ -26,8 +26,8 @@ private:
         if (!node->left && !node->right)
             return num;
 
-        int left_num = dfs(node->left, num);
-        int right_num = dfs(node->right, num);
+        int left_num = DFS(node->left, num);
+        int right_num = DFS(node->right, num);
 
         return left_num + right_num;
     }

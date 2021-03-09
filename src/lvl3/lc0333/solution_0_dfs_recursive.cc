@@ -18,21 +18,21 @@ public:
     int largestBSTSubtree(TreeNode *root)
     {
         int largest = 0, min_val = INT_MIN, max_val = INT_MAX;
-        dfs(root, largest, min_val, max_val);
+        IsBST(root, largest, min_val, max_val);
         return largest;
     }
 
 private:
-    bool dfs(TreeNode *node, int &largest, int &min_val, int &max_val)
+    bool IsBST(TreeNode *node, int &largest, int &min_val, int &max_val)
     {
         if (!node)
             return true;
 
         int left_min_val = INT_MIN, left_max_val = INT_MAX, left_count = 0;
-        bool left = dfs(node->left, left_count, left_min_val, left_max_val);
+        bool left = IsBST(node->left, left_count, left_min_val, left_max_val);
 
         int right_min_val = INT_MIN, right_max_val = INT_MAX, right_count = 0;
-        bool right = dfs(node->right, right_count, right_min_val, right_max_val);
+        bool right = IsBST(node->right, right_count, right_min_val, right_max_val);
 
         if (left && right)
         {

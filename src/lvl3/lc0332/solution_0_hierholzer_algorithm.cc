@@ -15,14 +15,14 @@ using namespace std;
 class Solution
 {
 public:
-    vector<string> findItinerary(vector<vector<string>> &tickets)
+    vector<string> FindItinerary(vector<vector<string>> &tickets)
     {
         vector<string> ans;
 
         for (auto &ticket : tickets)
             graph[ticket[0]].push(ticket[1]);
 
-        postorder(kStart, ans);
+        Postorder(kStart, ans);
 
         reverse(ans.begin(), ans.end());
 
@@ -33,17 +33,17 @@ private:
     const string kStart = "JFK";
     unordered_map<string, priority_queue<string, vector<string>, greater<string>>> graph;
 
-    void postorder(const string &kCur,
+    void Postorder(const string &cur,
                    vector<string> &res)
     {
-        while (graph.count(kCur) && !graph[kCur].empty())
+        auto &max_heap = graph[cur];
+        while (!max_heap.empty())
         {
-            const string kNext = graph[kCur].top();
-            graph[kCur].pop();
-
-            postorder(kNext, res);
+            string next = max_heap.top();
+            max_heap.pop();
+            Postorder(next, res);
         }
 
-        res.push_back(kCur);
+        res.push_back(cur);
     }
 };
