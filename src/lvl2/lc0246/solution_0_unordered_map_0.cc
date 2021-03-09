@@ -28,7 +28,8 @@ public:
             if (map[num[lo] - '0'] != num[hi] - '0')
                 return false;
 
-            ++lo, --hi;
+            ++lo;
+            --hi;
         }
 
         return true;
