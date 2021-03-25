@@ -15,15 +15,16 @@ public:
     bool KLengthApart(vector<int> &nums, int k)
     {
         const int kSize = nums.size();
-        int prev_one = -k - 1;
+        int prev_idx = -k - 1;
 
         for (int i = 0; i < kSize; ++i)
         {
             if (nums[i])
             {
-                if (i - prev_one <= k)
+                if (i - prev_idx <= k)
                     return false;
-                prev_one = i;
+
+                prev_idx = i;
             }
         }
 
