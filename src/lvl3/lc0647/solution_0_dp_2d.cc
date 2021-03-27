@@ -13,7 +13,7 @@ using namespace std;
 class Solution
 {
 public:
-    int countSubstrings(string str)
+    int CountSubstrings(string str)
     {
         const int kSize = str.size();
         int count = 0;

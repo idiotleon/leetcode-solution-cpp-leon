@@ -13,7 +13,7 @@ using namespace std;
 class Solution
 {
 public:
-    int countSubstrings(string str)
+    int CountSubstrings(string str)
     {
         const int kLenS = str.size();
 
@@ -21,15 +21,15 @@ public:
 
         for (int i = 0; i < kLenS; ++i)
         {
-            count += expand(i, i, str);
-            count += expand(i, 1 + i, str);
+            count += Expand(i, i, str);
+            count += Expand(i, 1 + i, str);
         }
 
         return count;
     }
 
 private:
-    int expand(int lo, int hi, string str)
+    int Expand(int lo, int hi, string str)
     {
         const int kLenS = str.size();
         int count = 0;
