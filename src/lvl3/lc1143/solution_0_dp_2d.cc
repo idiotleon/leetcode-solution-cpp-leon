@@ -11,7 +11,7 @@ using namespace std;
 class Solution
 {
 public:
-    int longestCommonSubsequence(string text1, string text2)
+    int LongestCommonSubsequence(string text1, string text2)
     {
         const int kLen1 = text1.size(), kLen2 = text2.size();
 
