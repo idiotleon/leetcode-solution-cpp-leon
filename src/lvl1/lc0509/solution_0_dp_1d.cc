@@ -10,7 +10,7 @@ using namespace std;
 class Solution
 {
 public:
-    int fib(int n)
+    int Fib(int n)
     {
         if (n < 1)
             return 0;
