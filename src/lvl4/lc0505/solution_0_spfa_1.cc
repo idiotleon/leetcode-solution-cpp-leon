@@ -13,13 +13,13 @@ using namespace std;
 class Solution
 {
 public:
-    int shortestDistance(vector<vector<int>> &maze, vector<int> &start, vector<int> &destination)
+    int ShortestDistance(vector<vector<int>> &maze, vector<int> &start, vector<int> &destination)
     {
-        const int n_rows = maze.size(), n_cols = maze[0].size();
-        if (n_rows == 0 || n_cols == 0)
+        const int kRows = maze.size(), kCols = maze[0].size();
+        if (kRows == 0 || kCols == 0)
             return -1;
 
-        vector<vector<int>> distances(n_rows, vector<int>(n_cols, -1));
+        vector<vector<int>> distances(kRows, vector<int>(kCols, -1));
         distances[start[0]][start[1]] = 0;
 
         queue<pair<int, int>> queue;
