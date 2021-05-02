@@ -21,12 +21,12 @@ public:
 
         while (lo < hi)
         {
-            int height = min(heights[lo], heights[hi]);
-            water = max(water, (hi - lo) * height);
+            const int kHeight = min(heights[lo], heights[hi]);
+            water = max(water, (hi - lo) * kHeight);
 
-            while (heights[lo] <= height && lo < hi)
+            while (lo < hi && heights[lo] <= kHeight)
                 ++lo;
-            while (heights[hi] <= height && lo < hi)
+            while (lo < hi && heights[hi] <= kHeight)
                 --hi;
         }
 
